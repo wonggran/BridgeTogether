@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
 import GiveawayDetail from './components/GiveawayDetail';
@@ -12,14 +12,14 @@ function App() {
   return (
     <div>
       <Header />
-        <Routes>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/giveaway/:id" component={GiveawayDetail} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/admin" component={AdminPanel} />
-        </Routes>
+      <Routes>
+        <Route exact path="/" element={<HomePage/>} />
+        <Route path="/giveaway/:id" element={<GiveawayDetail/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>} />
+        <Route path="/profile" element={<Profile/>} />
+        <Route path="/admin" element={<AdminPanel/>} />
+      </Routes>
     </div>
   );
 }
